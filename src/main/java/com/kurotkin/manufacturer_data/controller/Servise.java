@@ -1,5 +1,6 @@
 package com.kurotkin.manufacturer_data.controller;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,14 +11,18 @@ public class Servise extends HttpServlet{
 
     private String mess;
 
-    public void init(){
+    public void init() throws ServletException {
         mess = "Test";
     }
 
-    public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
-        res.setContentType("text/html");
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
 
-        PrintWriter p = res.getWriter();
+        PrintWriter p = response.getWriter();
         p.println("<h1>" + mess + "<h1>");
+    }
+
+    public void destroy() {
+
     }
 }
