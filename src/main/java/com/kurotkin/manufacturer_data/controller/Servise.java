@@ -22,6 +22,14 @@ public class Servise extends HttpServlet{
         p.println("<h1>" + mess + "<h1>");
     }
 
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        sendErr(request, response);
+    }
+
+    public void sendErr(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.sendError(403, "Access denied!!!");
+    }
+
     public void destroy() {
 
     }
