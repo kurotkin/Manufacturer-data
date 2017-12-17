@@ -9,9 +9,19 @@
     <servlet-name>SimpleServlet</servlet-name>
     <servlet-class>com.kurotkin.manufacturer_data.controller.Servise</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>PostServlet</servlet-name>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Post</servlet-class>
+  </servlet>
   
   <servlet-mapping>
     <servlet-name>SimpleServlet</servlet-name>
     <url-pattern>/test</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>PostServlet</servlet-name>
+    <url-pattern>/post</url-pattern>
   </servlet-mapping>
 </web-app>
