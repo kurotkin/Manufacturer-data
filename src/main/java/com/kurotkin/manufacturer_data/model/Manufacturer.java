@@ -22,9 +22,8 @@ public class Manufacturer {
     public Manufacturer() {
     }
 
-    public Manufacturer(String name, Set<Product> products) {
+    public Manufacturer(String name) {
         this.name = name;
-        this.products = products;
     }
 
     public Manufacturer withID(Long id) {

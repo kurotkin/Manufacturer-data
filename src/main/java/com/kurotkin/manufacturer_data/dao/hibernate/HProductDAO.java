@@ -52,7 +52,7 @@ public class HProductDAO implements ProductDAO {
         return result;
     }
 
-    public Long save(Product product) throws SQLException {
+    public Long save(Product product) {
         Long id = null;
         try (Session session = this.sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
