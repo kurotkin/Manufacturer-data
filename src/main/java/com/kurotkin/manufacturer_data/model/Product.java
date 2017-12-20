@@ -19,6 +19,8 @@ public class Product {
     private BigDecimal price;
 
     @Column(name = "manufacturer")
+    @ManyToOne
+    @JoinColumn(name = "parent_id", nullable = true)
     private Manufacturer manufacturer;
 
     public Product() {

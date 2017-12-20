@@ -1,6 +1,8 @@
 package com.kurotkin.manufacturer_data.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "manufacturers")
@@ -14,12 +16,15 @@ public class Manufacturer {
     @Column(name = "name", nullable = false)
     private String name;
 
+    @OneToMany(mappedBy = "manufacturer", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
+    private Set<Product> products = new HashSet<Product>();
+
     public Manufacturer() {
     }
 
-    public Manufacturer(Long id, String name) {
-        this.id = id;
+    public Manufacturer(String name, Set<Product> products) {
         this.name = name;
+        this.products = products;
     }
 
     public Manufacturer withID(Long id) {
