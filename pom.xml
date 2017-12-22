@@ -9,7 +9,7 @@
 
     <properties>
         <hibernate.version>5.2.12.Final</hibernate.version>
-        <hibernate.version.tools>5.2.12.Final</hibernate.version.tools>
+        <hibernate.version.tools>5.2.8.Final</hibernate.version.tools>
         <mysql-connector.version>6.0.6</mysql-connector.version>
     </properties>
 
