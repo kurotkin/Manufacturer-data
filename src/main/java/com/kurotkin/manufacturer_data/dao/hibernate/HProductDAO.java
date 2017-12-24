@@ -15,7 +15,7 @@ public class HProductDAO implements ProductDAO {
 
     private SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
 
-    public Product getById(Long id) throws SQLException {
+    public Product getById(Long id) {
         Product product = null;
         try (Session session = this.sessionFactory.openSession()){
             product = session.get(Product.class, id);
@@ -26,7 +26,7 @@ public class HProductDAO implements ProductDAO {
         return product;
     }
 
-    public Product getByName(String name) throws SQLException {
+    public Product getByName(String name) {
         Product product = null;
         try (Session session = this.sessionFactory.openSession()) {
             String query = "select c from Product c where c.name like :name";
@@ -40,7 +40,7 @@ public class HProductDAO implements ProductDAO {
         return product;
     }
 
-    public List<Product> getAll() throws SQLException {
+    public List<Product> getAll() {
         List<Product> result = null;
         try (Session session = this.sessionFactory.openSession()) {
             Query query = session.createQuery("from Product");
@@ -65,7 +65,7 @@ public class HProductDAO implements ProductDAO {
         return id;
     }
 
-    public void update(Product val) throws SQLException {
+    public void update(Product val) {
         try (Session session = this.sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             Product product = session.get(Product.class, val.getId());
@@ -78,7 +78,7 @@ public class HProductDAO implements ProductDAO {
         }
     }
 
-    public void delete(Product val) throws SQLException {
+    public void delete(Product val) {
         try (Session session = this.sessionFactory.openSession()) {
             Transaction transaction = session.beginTransaction();
             Product product = session.get(Product.class, val.getId());
