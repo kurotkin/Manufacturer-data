@@ -15,6 +15,9 @@ public class Main {
 
         Product product = new Product("Test product 2", new BigDecimal(1232), new Manufacturer("Manufacturer"));
         productDAO.save(product);
+
+        Product loadProduct = productDAO.getByName("Test product 2");
+        System.out.println(loadProduct);
     }
 
 
