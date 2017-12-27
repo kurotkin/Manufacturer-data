@@ -18,7 +18,7 @@ public class Product {
     @Column(name = "price")
     private BigDecimal price;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "parent_id", nullable = true)
     private Manufacturer manufacturer;
 
@@ -30,6 +30,7 @@ public class Product {
         this.price = price;
         this.manufacturer = manufacturer;
     }
+
 
     public Long getId() {
         return id;

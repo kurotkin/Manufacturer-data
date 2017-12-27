@@ -16,7 +16,7 @@ public class Manufacturer {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "manufacturer", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = false)
+    @OneToMany(mappedBy = "manufacturer", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = false)
     private Set<Product> products = new HashSet<Product>();
 
     public Manufacturer() {
@@ -57,7 +57,6 @@ public class Manufacturer {
         return "Manufacturer{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", products=" + products +
                 '}';
     }
 }
