@@ -2,9 +2,7 @@ package com.kurotkin.manufacturer_data.controller;
 
 import com.kurotkin.manufacturer_data.controller.html.Table;
 import com.kurotkin.manufacturer_data.dao.hibernate.HManufacturerDAO;
-import com.kurotkin.manufacturer_data.dao.hibernate.HProductDAO;
 import com.kurotkin.manufacturer_data.model.Manufacturer;
-import com.kurotkin.manufacturer_data.model.Product;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +21,12 @@ public class Manufacturers_page extends HttpServlet {
         p.println("<h1>" + "Manufacturers" + "</h1>");
 
         HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
-        p.println(new Table<Manufacturer>().getTable(manufacturerDAO.getAll()));
+        List<Manufacturer> manufacturers = manufacturerDAO.getAll();
+        Table table = new Table<Manufacturer>();
+        String tableHTML = table.getTable(manufacturers);
+
+        System.out.println(tableHTML);
+        p.println(tableHTML);
 
         p.println("</body></html>");
     }

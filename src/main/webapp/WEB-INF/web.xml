@@ -14,6 +14,11 @@
     <servlet-name>PostServlet</servlet-name>
     <servlet-class>com.kurotkin.manufacturer_data.controller.Post</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>Manufacturers</servlet-name>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers_page</servlet-class>
+  </servlet>
   
   <servlet-mapping>
     <servlet-name>SimpleServlet</servlet-name>
@@ -23,5 +28,10 @@
   <servlet-mapping>
     <servlet-name>PostServlet</servlet-name>
     <url-pattern>/post</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>Manufacturers</servlet-name>
+    <url-pattern>/manufacturers</url-pattern>
   </servlet-mapping>
 </web-app>
