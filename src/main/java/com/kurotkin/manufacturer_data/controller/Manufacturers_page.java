@@ -21,6 +21,9 @@ public class Manufacturers_page extends HttpServlet {
         p.println("<center>");
         p.println("<h1>" + "Manufacturers" + "</h1>");
 
+        p.println("<p><a href=\"/manufacturers\">Manufacturers</a></p>");
+        p.println("<p><a href=\"/products\">Products</a></p>");
+
         HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
         List<Manufacturer> manufacturers = manufacturerDAO.getAll();
         Table table = new Table<Manufacturer>();

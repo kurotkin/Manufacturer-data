@@ -6,28 +6,18 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <servlet>
-    <servlet-name>SimpleServlet</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.Servise</servlet-class>
-  </servlet>
-
-  <servlet>
-    <servlet-name>PostServlet</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.Post</servlet-class>
-  </servlet>
-
-  <servlet>
     <servlet-name>Manufacturers</servlet-name>
     <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers_page</servlet-class>
   </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>SimpleServlet</servlet-name>
-    <url-pattern>/test</url-pattern>
-  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>Products</servlet-name>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Products_page</servlet-class>
+  </servlet>
 
   <servlet-mapping>
-    <servlet-name>PostServlet</servlet-name>
-    <url-pattern>/post</url-pattern>
+    <servlet-name>Products</servlet-name>
+    <url-pattern>/products</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

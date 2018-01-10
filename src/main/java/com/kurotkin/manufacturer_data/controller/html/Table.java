@@ -7,7 +7,7 @@ import java.util.List;
 public class Table<T> {
     public String getTable(List<Manufacturer> list){
         String str = "";
-        str += "<table border=\"1\">\n";
+        str += "<table cellpadding=\"7\" border=\"1\">\n";
 
         str += "<tr>\n";
         str += "<td>" + "ID" + "</td>\n";
