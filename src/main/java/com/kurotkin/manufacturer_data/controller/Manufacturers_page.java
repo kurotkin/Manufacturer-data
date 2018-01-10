@@ -18,6 +18,7 @@ public class Manufacturers_page extends HttpServlet {
 
         final PrintWriter p = response.getWriter();
         p.println("<!DOCTYPE html>" + "<html><head><title>" + "Manufacturers" + "</title></head><body>");
+        p.println("<center>");
         p.println("<h1>" + "Manufacturers" + "</h1>");
 
         HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
@@ -28,6 +29,7 @@ public class Manufacturers_page extends HttpServlet {
         System.out.println(tableHTML);
         p.println(tableHTML);
 
+        p.println("</center>");
         p.println("</body></html>");
     }
 
