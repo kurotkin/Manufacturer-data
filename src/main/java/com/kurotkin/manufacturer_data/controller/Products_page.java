@@ -21,27 +21,12 @@ public class Products_page extends HttpServlet {
         p.println("<center>");
         p.println("<h1>" + "Products" + "</h1>");
 
+        p.println("<p><a href=\"/\">Main</a></p>");
+        p.println("<p><a href=\"/manufacturers\">Manufacturers</a></p>");
+        p.println("<p><a href=\"/products\">Products</a></p>");
+
         HProductDAO productDAO = new HProductDAO();
         List<Product> products = productDAO.getAll();
-
-
-
-//        for(int i = 0; i < products.size(); i++){
-//            p.println("ID: " + products.get(i).getId() + "<br>");
-//            p.println("Name: " + products.get(i).getName() + "<br>");
-//            p.println("Price: " + products.get(i).getPrice() + "<br>");
-//            Manufacturer manufacturer = products.get(i).getManufacturer();
-//            if(manufacturer == null){
-//                p.println("Manufacturer: " + "null" + "<br/>");
-//            } else {
-//                p.println("Manufacturer: " + manufacturer.getId() + "<br/>");
-//                p.println("_____________ " + manufacturer.getName() + "<br/>");
-//            }
-//
-//            p.println("<br>");
-//        }
-
-
 
         String str = "";
         str += "<table cellpadding=\"7\" border=\"1\">\n";
@@ -69,6 +54,7 @@ public class Products_page extends HttpServlet {
             str += "</tr>\n";
         }
 
+        p.println(str);
         p.println("</center>");
         p.println("</body></html>");
     }

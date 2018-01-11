@@ -21,6 +21,7 @@ public class Manufacturers_page extends HttpServlet {
         p.println("<center>");
         p.println("<h1>" + "Manufacturers" + "</h1>");
 
+        p.println("<p><a href=\"/\">Main</a></p>");
         p.println("<p><a href=\"/manufacturers\">Manufacturers</a></p>");
         p.println("<p><a href=\"/products\">Products</a></p>");
 
@@ -29,7 +30,6 @@ public class Manufacturers_page extends HttpServlet {
         Table table = new Table<Manufacturer>();
         String tableHTML = table.getTable(manufacturers);
 
-        System.out.println(tableHTML);
         p.println(tableHTML);
 
         p.println("</center>");
