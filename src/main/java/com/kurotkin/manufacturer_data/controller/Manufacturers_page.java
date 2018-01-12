@@ -21,15 +21,22 @@ public class Manufacturers_page extends HttpServlet {
         p.println("<center>");
         p.println("<h1>" + "Manufacturers" + "</h1>");
 
+        p.println("<h2>" + "Menu:" + "</h2>");
         p.println("<p><a href=\"/\">Main</a></p>");
         p.println("<p><a href=\"/manufacturers\">Manufacturers</a></p>");
         p.println("<p><a href=\"/products\">Products</a></p>");
 
+        p.println("<h2>" + "Add new:" + "</h2>");
+        p.println("<form action=\"ManufacturerAddNew\" method=\"POST\">");
+        p.println("Name: <input type=\"text\" name=\"name\">");
+        p.println("<input type=\"submit\" value=\"Add\"/>");
+        p.println("</form>");
+
+        p.println("<h2>" + "Current:" + "</h2>");
         HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
         List<Manufacturer> manufacturers = manufacturerDAO.getAll();
         Table table = new Table<Manufacturer>();
         String tableHTML = table.getTable(manufacturers);
-
         p.println(tableHTML);
 
         p.println("</center>");
