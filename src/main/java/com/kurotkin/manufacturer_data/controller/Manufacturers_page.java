@@ -1,6 +1,5 @@
 package com.kurotkin.manufacturer_data.controller;
 
-import com.kurotkin.manufacturer_data.controller.html.Table;
 import com.kurotkin.manufacturer_data.dao.hibernate.HManufacturerDAO;
 import com.kurotkin.manufacturer_data.model.Manufacturer;
 
@@ -35,9 +34,28 @@ public class Manufacturers_page extends HttpServlet {
         p.println("<h2>" + "Current:" + "</h2>");
         HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
         List<Manufacturer> manufacturers = manufacturerDAO.getAll();
-        Table table = new Table<Manufacturer>();
-        String tableHTML = table.getTable(manufacturers);
-        p.println(tableHTML);
+
+        String str = "";
+        str += "<table cellpadding=\"7\" border=\"1\">\n";
+
+        str += "<tr>\n";
+        str += "<td>" + "ID" + "</td>\n";
+        str += "<td>" + "Name" + "</td>\n";
+        str += "<td>" + "Delete" + "</td>\n";
+        str += "</tr>\n";
+
+        for(int i = 0; i < manufacturers.size(); i++){
+            str += "<tr>\n";
+            str += "<td>" + manufacturers.get(i).getId() + "</td>\n";
+            str += "<td>" + manufacturers.get(i).getName() + "</td>\n";
+            str += "<td>" +
+                    "<form action=\"ManufacturerDelete\" method=\"POST\">\n" +
+                    "<button name=\"del\" value=\"" + manufacturers.get(i).getId() + "\">Delete</button>\n" +
+                    "</form>\n" +
+                    "</td>\n";
+            str += "</tr>\n";
+        }
+        p.println(str);
 
         p.println("</center>");
         p.println("</body></html>");

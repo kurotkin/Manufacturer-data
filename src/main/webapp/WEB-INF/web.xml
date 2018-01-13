@@ -20,6 +20,11 @@
     <servlet-class>com.kurotkin.manufacturer_data.controller.ManufacturerAddNew</servlet-class>
   </servlet>
 
+  <servlet>
+    <servlet-name>ManufacturerDelete</servlet-name>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.ManufacturerDelete</servlet-class>
+  </servlet>
+
   <servlet-mapping>
     <servlet-name>Products</servlet-name>
     <url-pattern>/products</url-pattern>
@@ -33,5 +38,10 @@
   <servlet-mapping>
     <servlet-name>ManufacturerAddNew</servlet-name>
     <url-pattern>/ManufacturerAddNew</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ManufacturerDelete</servlet-name>
+    <url-pattern>/ManufacturerDelete</url-pattern>
   </servlet-mapping>
 </web-app>
