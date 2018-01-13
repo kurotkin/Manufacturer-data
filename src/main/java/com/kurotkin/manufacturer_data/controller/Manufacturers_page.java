@@ -31,7 +31,7 @@ public class Manufacturers_page extends HttpServlet {
         p.println("<input type=\"submit\" value=\"Add\"/>");
         p.println("</form>");
 
-        p.println("<h2>" + "Current:" + "</h2>");
+        p.println("<h2>" + "Manufacturers table:" + "</h2>");
         HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
         List<Manufacturer> manufacturers = manufacturerDAO.getAll();
 
@@ -42,6 +42,7 @@ public class Manufacturers_page extends HttpServlet {
         str += "<td>" + "ID" + "</td>\n";
         str += "<td>" + "Name" + "</td>\n";
         str += "<td>" + "Delete" + "</td>\n";
+        str += "<td>" + "Rename" + "</td>\n";
         str += "</tr>\n";
 
         for(int i = 0; i < manufacturers.size(); i++){
@@ -51,6 +52,12 @@ public class Manufacturers_page extends HttpServlet {
             str += "<td>" +
                     "<form action=\"ManufacturerDelete\" method=\"POST\">\n" +
                     "<button name=\"del\" value=\"" + manufacturers.get(i).getId() + "\">Delete</button>\n" +
+                    "</form>\n" +
+                    "</td>\n";
+            str += "<td>" +
+                    "<form action=\"ManufacturerRename\" method=\"POST\">\n" +
+                    "<input type=\"text\" name=\"newname\">\n" +
+                    "<button name=\"rename\" value=\"" + manufacturers.get(i).getId() + "\">Rename</button>\n" +
                     "</form>\n" +
                     "</td>\n";
             str += "</tr>\n";
