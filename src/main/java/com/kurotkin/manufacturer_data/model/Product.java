@@ -31,6 +31,10 @@ public class Product {
         this.manufacturer = manufacturer;
     }
 
+    public Product withId (Long id) {
+        this.id = id;
+        return this;
+    }
 
     public Long getId() {
         return id;

@@ -1,6 +1,5 @@
 package com.kurotkin.manufacturer_data.controller.Products;
 
-import com.kurotkin.manufacturer_data.controller.Manufacturers.Manufacturers_page;
 import com.kurotkin.manufacturer_data.dao.hibernate.HProductDAO;
 import com.kurotkin.manufacturer_data.model.Manufacturer;
 import com.kurotkin.manufacturer_data.model.Product;
