@@ -20,11 +20,27 @@ public class Products_page extends HttpServlet {
         p.println("<!DOCTYPE html>" + "<html><head><title>" + "Products" + "</title></head><body>");
         p.println("<center>");
         p.println("<h1>" + "Products" + "</h1>");
+        p.println("<hr>");
 
+        p.println("<h2>" + "Menu:" + "</h2>");
         p.println("<p><a href=\"/\">Main</a></p>");
         p.println("<p><a href=\"/manufacturers\">Manufacturers</a></p>");
         p.println("<p><a href=\"/products\">Products</a></p>");
+        p.println("<br>");
+        p.println("<hr>");
 
+
+        p.println("<h2>" + "Add new:" + "</h2>");
+        p.println("<form action=\" \" method=\"POST\">");
+        p.println("Product name : <input type=\"text\" name=\"name\"> <br>");
+        p.println("Product price: <input type=\"text\" name=\"price\"> <br>");
+        p.println("Manufacturer : <input type=\"text\" name=\"manufacturer\"> <br>");
+        p.println("<input type=\"submit\" value=\"Add\"/>");
+        p.println("</form>");
+        p.println("<br>");
+        p.println("<hr>");
+
+        p.println("<h2>" + "Products table:" + "</h2>");
         HProductDAO productDAO = new HProductDAO();
         List<Product> products = productDAO.getAll();
 
@@ -36,6 +52,8 @@ public class Products_page extends HttpServlet {
         str += "<td>" + "Name" + "</td>\n";
         str += "<td>" + "Price" + "</td>\n";
         str += "<td>" + "Manufacturer" + "</td>\n";
+        str += "<td>" + "Delete" + "</td>\n";
+        str += "<td>" + "Rename" + "</td>\n";
         str += "</tr>\n";
 
         for(int i = 0; i < products.size(); i++){
@@ -51,6 +69,17 @@ public class Products_page extends HttpServlet {
                 manufacturerName =  manufacturer.getName();
             }
             str += "<td>" + manufacturerName + "</td>\n";
+            str += "<td>" +
+                    "<form action=\" Delete\" method=\"POST\">\n" +
+                    "<button name=\"del\" value=\"" + products.get(i).getId() + "\">Delete</button>\n" +
+                    "</form>\n" +
+                    "</td>\n";
+            str += "<td>" +
+                    "<form action=\" Rename\" method=\"POST\">\n" +
+                    "<input type=\"text\" name=\"newname\">\n" +
+                    "<button name=\"rename\" value=\"" + products.get(i).getId() + "\">Rename</button>\n" +
+                    "</form>\n" +
+                    "</td>\n";
             str += "</tr>\n";
         }
 
