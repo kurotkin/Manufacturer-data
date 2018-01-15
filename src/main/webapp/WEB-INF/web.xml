@@ -7,12 +7,12 @@
 
   <servlet>
     <servlet-name>Manufacturers</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers.Manufacturers_page</servlet-class>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers.ManufacturersPage</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>Products</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.Products.Products_page</servlet-class>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Products.ProductsPage</servlet-class>
   </servlet>
 
   <servlet>
@@ -29,6 +29,22 @@
     <servlet-name>ManufacturerRename</servlet-name>
     <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers.ManufacturerRename</servlet-class>
   </servlet>
+
+  <servlet>
+    <servlet-name>ProductsAddNew</servlet-name>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Products.ProductsAddNew</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ProductsDelete</servlet-name>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Products.ProductsDelete</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>ProductsRename</servlet-name>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Products.ProductsRename</servlet-class>
+  </servlet>
+
 
   <servlet-mapping>
     <servlet-name>Products</servlet-name>
@@ -53,5 +69,20 @@
   <servlet-mapping>
     <servlet-name>ManufacturerRename</servlet-name>
     <url-pattern>/ManufacturerRename</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ProductsAddNew</servlet-name>
+    <url-pattern>/ProductsAddNew</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ProductsDelete</servlet-name>
+    <url-pattern>/ProductsDelete</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>ProductsRename</servlet-name>
+    <url-pattern>/ProductsRename</url-pattern>
   </servlet-mapping>
 </web-app>

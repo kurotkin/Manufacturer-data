@@ -17,6 +17,6 @@ public class ManufacturerAddNew extends HttpServlet {
         Manufacturer manufacturer = new Manufacturer().withName(name);
         manufacturerDAO.save(manufacturer);
 
-        new Manufacturers_page().doGet(request, response);
+        new ManufacturersPage().doGet(request, response);
     }
 }

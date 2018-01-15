@@ -18,6 +18,6 @@ public class ProductsDelete extends HttpServlet {
         Product product = new Product().withId(id);
         productDAO.delete(product);
 
-        new Products_page().doGet(request, response);
+        new ProductsPage().doGet(request, response);
     }
 }

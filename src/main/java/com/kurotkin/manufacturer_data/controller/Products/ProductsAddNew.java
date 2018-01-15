@@ -22,6 +22,6 @@ public class ProductsAddNew extends HttpServlet {
         Product product = new Product(name, price, manufacturer);
         productDAO.save(product);
 
-        new Products_page().doGet(request, response);
+        new ProductsPage().doGet(request, response);
     }
 }

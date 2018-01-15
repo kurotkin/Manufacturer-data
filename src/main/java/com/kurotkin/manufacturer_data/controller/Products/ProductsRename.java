@@ -1,6 +1,6 @@
 package com.kurotkin.manufacturer_data.controller.Products;
 
-import com.kurotkin.manufacturer_data.controller.Manufacturers.Manufacturers_page;
+import com.kurotkin.manufacturer_data.controller.Manufacturers.ManufacturersPage;
 import com.kurotkin.manufacturer_data.dao.hibernate.HProductDAO;
 import com.kurotkin.manufacturer_data.model.Product;
 
@@ -20,6 +20,6 @@ public class ProductsRename extends HttpServlet {
         Product product = new Product().withId(id).withName(newName);
         productDAO.update(product);
 
-        new Manufacturers_page().doGet(request, response);
+        new ProductsPage().doGet(request, response);
     }
 }

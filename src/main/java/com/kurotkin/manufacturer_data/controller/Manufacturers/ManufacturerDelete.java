@@ -18,6 +18,6 @@ public class ManufacturerDelete  extends HttpServlet {
         Manufacturer manufacturer = new Manufacturer().withID(id);
         manufacturerDAO.delete(manufacturer);
 
-        new Manufacturers_page().doGet(request, response);
+        new ManufacturersPage().doGet(request, response);
     }
 }

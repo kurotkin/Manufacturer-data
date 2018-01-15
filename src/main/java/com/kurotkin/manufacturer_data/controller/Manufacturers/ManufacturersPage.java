@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class Manufacturers_page extends HttpServlet {
+public class ManufacturersPage extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
 
@@ -19,17 +19,23 @@ public class Manufacturers_page extends HttpServlet {
         p.println("<!DOCTYPE html>" + "<html><head><title>" + "Manufacturers" + "</title></head><body>");
         p.println("<center>");
         p.println("<h1>" + "Manufacturers" + "</h1>");
+        p.println("<br>");
+        p.println("<hr>");
 
         p.println("<h2>" + "Menu:" + "</h2>");
         p.println("<p><a href=\"/\">Main</a></p>");
         p.println("<p><a href=\"/manufacturers\">Manufacturers</a></p>");
         p.println("<p><a href=\"/products\">Products</a></p>");
+        p.println("<br>");
+        p.println("<hr>");
 
         p.println("<h2>" + "Add new:" + "</h2>");
         p.println("<form action=\"ManufacturerAddNew\" method=\"POST\">");
         p.println("Name: <input type=\"text\" name=\"name\">");
         p.println("<input type=\"submit\" value=\"Add\"/>");
         p.println("</form>");
+        p.println("<br>");
+        p.println("<hr>");
 
         p.println("<h2>" + "Manufacturers table:" + "</h2>");
         HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
