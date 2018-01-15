@@ -7,27 +7,27 @@
 
   <servlet>
     <servlet-name>Manufacturers</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers_page</servlet-class>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers.Manufacturers_page</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>Products</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.Products_page</servlet-class>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Products.Products_page</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>ManufacturerAddNew</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.ManufacturerAddNew</servlet-class>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers.ManufacturerAddNew</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>ManufacturerDelete</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.ManufacturerDelete</servlet-class>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers.ManufacturerDelete</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>ManufacturerRename</servlet-name>
-    <servlet-class>com.kurotkin.manufacturer_data.controller.ManufacturerRename</servlet-class>
+    <servlet-class>com.kurotkin.manufacturer_data.controller.Manufacturers.ManufacturerRename</servlet-class>
   </servlet>
 
   <servlet-mapping>

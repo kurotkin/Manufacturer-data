@@ -1,4 +1,4 @@
-package com.kurotkin.manufacturer_data.controller;
+package com.kurotkin.manufacturer_data.controller.Manufacturers;
 
 import com.kurotkin.manufacturer_data.dao.hibernate.HManufacturerDAO;
 import com.kurotkin.manufacturer_data.model.Manufacturer;
