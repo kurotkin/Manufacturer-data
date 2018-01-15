@@ -36,6 +36,11 @@ public class Product {
         return this;
     }
 
+    public Product withName (String name) {
+        this.name = name;
+        return this;
+    }
+
     public Long getId() {
         return id;
     }
