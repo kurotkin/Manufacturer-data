@@ -1,5 +1,6 @@
 package com.kurotkin.manufacturer_data.controller.Products;
 
+import com.kurotkin.manufacturer_data.dao.hibernate.HManufacturerDAO;
 import com.kurotkin.manufacturer_data.dao.hibernate.HProductDAO;
 import com.kurotkin.manufacturer_data.model.Manufacturer;
 import com.kurotkin.manufacturer_data.model.Product;
@@ -34,7 +35,18 @@ public class ProductsPage extends HttpServlet {
         p.println("<form action=\"ProductsAddNew\" method=\"POST\">");
         p.println("Product name: <input type=\"text\" name=\"name\"> <br>");
         p.println("Product price: <input type=\"text\" name=\"price\"> <br>");
-        p.println("Manufacturer: <input type=\"text\" name=\"manufacturer\"> <br>");
+
+        HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
+        List<Manufacturer> manufacturers = manufacturerDAO.getAll();
+        p.println("Manufacturer: ");
+        p.println("<select size=\"" + manufacturers.size() + "\" multiple name=\"manufacturer\">");
+        p.println("<option disabled>...</option>");
+        for(int i = 0; i < manufacturers.size(); i++) {
+            p.println("<option value=\"" + manufacturers.get(i).getId() + "\">" +
+                    manufacturers.get(i).getName() + "</option>");
+        }
+        p.println("</select>");
+
         p.println("<input type=\"submit\" value=\"Add\"/>");
         p.println("</form>");
         p.println("<br>");

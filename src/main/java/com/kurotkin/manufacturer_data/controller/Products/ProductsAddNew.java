@@ -1,5 +1,6 @@
 package com.kurotkin.manufacturer_data.controller.Products;
 
+import com.kurotkin.manufacturer_data.dao.hibernate.HManufacturerDAO;
 import com.kurotkin.manufacturer_data.dao.hibernate.HProductDAO;
 import com.kurotkin.manufacturer_data.model.Manufacturer;
 import com.kurotkin.manufacturer_data.model.Product;
@@ -16,8 +17,11 @@ public class ProductsAddNew extends HttpServlet {
         HProductDAO productDAO = new HProductDAO();
         String name = request.getParameter("name");
         BigDecimal price = new BigDecimal(request.getParameter("price"));
-        String manufacturerName = request.getParameter("manufacturer");
-        Manufacturer manufacturer = new Manufacturer().withName(manufacturerName);
+
+        HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
+
+        Long manufacturerId = Long.parseLong(request.getParameter("manufacturer"));
+        Manufacturer manufacturer = manufacturerDAO.getById(manufacturerId);
 
         Product product = new Product(name, price, manufacturer);
         productDAO.save(product);
