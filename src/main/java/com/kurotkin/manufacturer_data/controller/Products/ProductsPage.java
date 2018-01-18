@@ -39,7 +39,7 @@ public class ProductsPage extends HttpServlet {
         HManufacturerDAO manufacturerDAO = new HManufacturerDAO();
         List<Manufacturer> manufacturers = manufacturerDAO.getAll();
         p.println("Manufacturer: ");
-        p.println("<select size=\"" + manufacturers.size() + "\" multiple name=\"manufacturer\">");
+        p.println("<select name=\"manufacturer\">");
         p.println("<option disabled>...</option>");
         for(int i = 0; i < manufacturers.size(); i++) {
             p.println("<option value=\"" + manufacturers.get(i).getId() + "\">" +
